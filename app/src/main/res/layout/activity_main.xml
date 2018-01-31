@@ -6,14 +6,24 @@
     tools:context=".MainActivity">
 
 <LinearLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/margin">
 
+    <EditText
+        android:id="@+id/customers_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textAllCaps="@bool/accepted"
+        android:inputType="textCapWords" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
         android:layout_marginBottom="@dimen/margin"
         android:text="Toppings"
         android:textAllCaps="@bool/accepted" />
@@ -24,6 +34,14 @@
         android:layout_height="wrap_content"
         android:paddingLeft="24dp"
         android:text="Whipped cream"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/chocolate_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="24dp"
+        android:text="Chocolate"
         android:textSize="16sp" />
 
     <TextView
