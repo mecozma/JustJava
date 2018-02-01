@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -23,7 +24,7 @@ import java.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    int quantity = 0;
+    int quantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,8 +121,16 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the + button is clicked
      */
     public void increment(View view) {
+        //The maximum number of coffees to be ordered is set to 100
+        if (quantity == 100) {
+            quantity = 100;
+            //The return statement stops the following code to be executed;
+            Toast.makeText(this, "You cannot order more than 100 cups of coffee", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        //If the codnition above it is not met, the quantity is increased by 1;
         quantity = quantity + 1;
-
+        //The quantity of coffees is displayed
         displayQuantity(quantity);
     }
 
@@ -129,6 +138,12 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the - button is clicked
      */
     public void decrement(View view) {
+        //The minim order of coffees to be orderes is set to 1;
+        if (quantity < 2) {
+            quantity = 1;
+            Toast.makeText(this, "You cannot order less than one cup of coffee", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity - 1;
 
         displayQuantity(quantity);
