@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
+        //This method
         EditText editText = findViewById(R.id.customers_name);
         String customerName = editText.getText().toString();
         Log.v("MainActivity", "name: " + customerName);
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Log.v("MainActivity", "Has chocolate: " + Boolean.toString(hasChocolate));
 
 
-        int price = calculatePrice();
+        int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, customerName);
         displayMessage(priceMessage);
 
@@ -58,11 +58,25 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order.
      *
+     *@param addWhippedCream
+     * @param addChocolate
+     *
      * @return total price
      */
-    private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+    private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
+        // sets the base price of the coffee
+        int basePrice = 5;
+
+        //checks if the whipped cream has been added to the coffe order
+        if (addWhippedCream) {
+            basePrice = basePrice + 1;
+        }
+        //checks if chocolate has bee nadded to the coffee order
+        if (addChocolate) {
+            basePrice = basePrice + 2;
+        }
+
+        return quantity * basePrice;
     }
 
     /**
