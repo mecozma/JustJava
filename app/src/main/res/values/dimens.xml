@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="checkBoxPadding">24dp</dimen>
+    <dimen name="plusMinusWh">48dp</dimen>
+    <dimen name="quantiyCounterPadding">8dp</dimen>
+</resources>

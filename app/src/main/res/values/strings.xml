@@ -5,4 +5,15 @@
     <string name="order_summary">ORDER SUMMARY</string>
     <string name="price_counter">$0</string>
     <string name="button_text">Order</string>
+    <string name="name">Name</string>
+    <string name="toppings">Toppings</string>
+    <string name="whipped_cream">Whipped cream</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="decrement">-</string>
+    <string name="increment">+</string>
+    <string name="Name">Name:</string>
+    <string name="whippedCreamTopping">Has whipped cream:</string>
+    <string name="chocolateTopping">Has chocolate:</string>
+    <string name="total">Total: $</string>
+    <string name="thankYou">Thank you!</string>
 </resources>

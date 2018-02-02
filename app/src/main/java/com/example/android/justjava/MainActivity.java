@@ -9,6 +9,8 @@
 package com.example.android.justjava;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,8 +19,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.text.NumberFormat;
 
 /**
  * This app displays an order form to order coffee.
@@ -51,7 +51,20 @@ public class MainActivity extends AppCompatActivity {
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, customerName);
-        displayMessage(priceMessage);
+
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "JustJava order for " + customerName);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
+
+
+
+
+
 
 
     }
@@ -90,13 +103,12 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate, String customerName) {
-        String priceMessage = "Name:" + customerName +
-                "\nHas whipped cream: " + addWhippedCream +
-                "\nHas chocolate: " + addChocolate +
-                "\nQuantity: " + quantity +
-                "\nTotal: $" +
-                price +
-                "\nThank you!";
+        String priceMessage = getString(R.string.Name) + customerName + "\n" +
+                getString(R.string.whippedCreamTopping) + addWhippedCream + "\n" +
+                getString(R.string.chocolateTopping) + addChocolate + "\n" +
+                getString(R.string.quantity) + quantity + "\n" +
+                getString(R.string.total) + price + "\n" +
+                getString(R.string.thankYou);
         return priceMessage;
 
     }
@@ -109,13 +121,13 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
-    /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+//    /**
+//     * This method displays the given price on the screen.
+//     */
+//    private void displayPrice(int number) {
+//        TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
+//        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+//    }
 
     /**
      * This method is called when the + button is clicked
@@ -149,13 +161,6 @@ public class MainActivity extends AppCompatActivity {
         displayQuantity(quantity);
     }
 
-    /**
-     * This method displays the given text on the screen.
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
 
 
 }
