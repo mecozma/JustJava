@@ -20,12 +20,12 @@
     <!--Increment button [CHAR LIMIT = 15]-->
     <string name="increment">+</string>
     <!-- Option to add whipped cream topping-->
-    <string name="whippedCreamTopping">Has whipped cream: <xliff:g id="addWhippedCream" example="true">%s</xliff:g></string>
+    <string name="whippedCreamTopping">Has whipped cream: <xliff:g id="addWhippedCream" example="true">%b</xliff:g></string>
     <!--Option to add chocolate topping-->
-    <string name="chocolateTopping">Has chocolate: <xliff:g id="AddChocolate" example="false">%s</xliff:g></string>
-    <string name="summary_quantity">Quantity: <xliff:g id="summary_quantity" example="Quantity: 3">%s</xliff:g></string>
+    <string name="chocolateTopping">Has chocolate: <xliff:g id="AddChocolate" example="false">%b</xliff:g></string>
+    <string name="summary_quantity">Quantity: <xliff:g id="summary_quantity" example="Quantity: 3">%i</xliff:g></string>
     <!--Total price of the order-->
-    <string name="total">Total: $ <xliff:g id="price" example="2$">%s</xliff:g></string>
+    <string name="total">Total: $ <xliff:g id="price" example="2$">%i</xliff:g></string>
     <!--Greeting for the customer-->
     <string name="thankYou">Thank you!</string>
     <!--The name of the customer-->

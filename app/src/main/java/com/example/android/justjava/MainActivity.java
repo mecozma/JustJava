@@ -65,9 +65,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order.
      *
-     *@param addWhippedCream
+     * @param addWhippedCream
      * @param addChocolate
-     *
      * @return total price
      */
     private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
@@ -96,13 +95,12 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary
      */
     private String createOrderSummary(String customerName, int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = getString(R.string.order_summary_name, customerName) +  "\n" +
-                getString(R.string.whippedCreamTopping, price) + "\n" +
+        String priceMessage = getString(R.string.order_summary_name, customerName) + "\n" +
+                getString(R.string.whippedCreamTopping, addWhippedCream) + "\n" +
                 getString(R.string.chocolateTopping, addChocolate) + "\n" +
                 getString(R.string.summary_quantity, quantity) + "\n" +
-                getString(R.string.total, price)+ "\n" +
+                getString(R.string.total, price) + "\n" +
                 getString(R.string.thankYou);
-
 
 
         return priceMessage;
@@ -156,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
 
         displayQuantity(quantity);
     }
-
 
 
 }
