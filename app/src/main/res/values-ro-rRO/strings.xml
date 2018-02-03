@@ -12,7 +12,8 @@
     <string name="increment">+</string>
     <string name="whippedCreamTopping">Cu frisca: <xliff:g id="addWhippedCream" example="true">%s</xliff:g></string>
     <string name="chocolateTopping">Cu ciocolata: <xliff:g id="AddChocolate" example="false">%s</xliff:g></string>
+    <string name="summary_quantity">Cantitate: <xliff:g id="summary_quantity" example="Quantity: 3">%s</xliff:g></string>
     <string name="total">Total: $ <xliff:g id="price" example="2$">%s</xliff:g></string>
     <string name="thankYou">Multumim!</string>
-    <string name="order_summary_name">Nume: <xliff:g id="name" example="Carla">%s</xliff:g></string>
+    <string name="order_summary_name">Nume: <xliff:g id="customerName" example="Carla">%s</xliff:g></string>
 </resources>

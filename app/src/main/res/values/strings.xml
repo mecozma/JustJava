@@ -3,7 +3,7 @@
     <!--Title for the app. [CHAR lIMIT = 12]-->
     <string name="app_name">Just Java</string>
     <!-- Text for the quantity field [CHAR LIMIT=20] -->
-    <string name="quantity">quantity</string>
+    <string name="quantity">Quantity</string>
     <!-- Countts the number of the coffees ordered [CHAR LIMIT=15] -->
     <string name="quantity_counter">1</string>
     <!-- Text for the order button [CHAR LIMIT=20] -->
@@ -23,11 +23,12 @@
     <string name="whippedCreamTopping">Has whipped cream: <xliff:g id="addWhippedCream" example="true">%s</xliff:g></string>
     <!--Option to add chocolate topping-->
     <string name="chocolateTopping">Has chocolate: <xliff:g id="AddChocolate" example="false">%s</xliff:g></string>
+    <string name="summary_quantity">Quantity: <xliff:g id="summary_quantity" example="Quantity: 3">%s</xliff:g></string>
     <!--Total price of the order-->
     <string name="total">Total: $ <xliff:g id="price" example="2$">%s</xliff:g></string>
     <!--Greeting for the customer-->
     <string name="thankYou">Thank you!</string>
     <!--The name of the customer-->
-    <string name="order_summary_name">Name: <xliff:g id="name" example="Carla">%s</xliff:g></string>
+    <string name="order_summary_name">Name: <xliff:g id="customerName" example="Carla">%s</xliff:g></string>
     <string name="toppings">Toppings</string>
 </resources>
