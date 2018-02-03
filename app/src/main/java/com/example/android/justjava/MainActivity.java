@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
-        String priceMessage = createOrderSummary(price, hasWhippedCream, hasChocolate, customerName);
+        String priceMessage = createOrderSummary(customerName, price, hasWhippedCream, hasChocolate);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
@@ -59,13 +59,6 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
-
-
-
-
-
-
 
     }
 
@@ -102,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
      * @param customerName
      * @return text summary
      */
-    private String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate, String customerName) {
-        String priceMessage = getString(R.string.Name) + customerName + "\n" +
+    private String createOrderSummary(String customerName, int price, boolean addWhippedCream, boolean addChocolate) {
+        String priceMessage = getString(R.string.order_summary_name, customerName) +  "\n" +
                 getString(R.string.whippedCreamTopping) + addWhippedCream + "\n" +
                 getString(R.string.chocolateTopping) + addChocolate + "\n" +
                 getString(R.string.quantity) + quantity + "\n" +
