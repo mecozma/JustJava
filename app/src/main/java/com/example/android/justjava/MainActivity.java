@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        //This method
+        //This method gets the customer's name
         EditText editText = findViewById(R.id.customers_name);
         String customerName = editText.getText().toString();
         Log.v("MainActivity", "name: " + customerName);

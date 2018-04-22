@@ -3,81 +3,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <LinearLayout
-
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/padding">
-
-        <EditText
-            android:id="@+id/customers_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/name"
-            android:inputType="textCapWords"
-            android:textAllCaps="@bool/accepted" />
-
-        <TextView
-            style="@style/HeaderTextStyle"
-            android:text="@string/toppings" />
-
-        <CheckBox
-            android:id="@+id/whipped_cream_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkBoxPadding"
-            android:text="@string/whipped_cream"
-            android:textSize="@dimen/text_size" />
-
-        <CheckBox
-            android:id="@+id/chocolate_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/checkBoxPadding"
-            android:text="@string/chocolate"
-            android:textSize="@dimen/text_size" />
-
-        <TextView
-            style="@style/HeaderTextStyle"
-            android:text="@string/quantity" />
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <Button
-                android:layout_width="@dimen/plusMinusWh"
-                android:layout_height="@dimen/plusMinusWh"
-                android:onClick="decrement"
-                android:text="@string/decrement" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/padding">
+
+            <EditText
+                android:id="@+id/customers_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:inputType="textCapWords"
+                android:textAllCaps="@bool/accepted" />
 
             <TextView
-                android:id="@+id/quantity_text_view"
+                style="@style/HeaderTextStyle"
+                android:text="@string/toppings" />
+
+            <CheckBox
+                android:id="@+id/whipped_cream_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/quantiyCounterPadding"
-                android:text="@string/quantity_counter"
-                android:textColor="@color/black"
+                android:paddingLeft="@dimen/checkBoxPadding"
+                android:text="@string/whipped_cream"
                 android:textSize="@dimen/text_size" />
 
-            <Button
-                android:layout_width="@dimen/plusMinusWh"
-                android:layout_height="@dimen/plusMinusWh"
-                android:onClick="increment"
-                android:text="@string/increment" />
+            <CheckBox
+                android:id="@+id/chocolate_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/checkBoxPadding"
+                android:text="@string/chocolate"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                style="@style/HeaderTextStyle"
+                android:text="@string/quantity" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="@dimen/plusMinusWh"
+                    android:layout_height="@dimen/plusMinusWh"
+                    android:onClick="decrement"
+                    android:text="@string/decrement" />
+
+                <TextView
+                    android:id="@+id/quantity_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/quantiyCounterPadding"
+                    android:text="@string/quantity_counter"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size" />
+
+                <Button
+                    android:layout_width="@dimen/plusMinusWh"
+                    android:layout_height="@dimen/plusMinusWh"
+                    android:onClick="increment"
+                    android:text="@string/increment" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="16dp"
             android:onClick="submitOrder"
             android:text="@string/button_text" />
 
-    </LinearLayout>
+    </RelativeLayout>
+
 </ScrollView>
